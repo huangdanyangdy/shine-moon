@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body{
+            min-height:100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #444;
+
+        }
+        .outer-circle{
+            position: relative;
+            /* background:radial-gradient(#14ffe9,#ffeb3b,#ff00ff); */
+            /* background:linear-gradient(#14ffe9,#ffeb3b,#ff00ff); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:200px;
+            height: 200px;
+            border-radius: 50%;
+            animation: rotate 1.5s linear infinite;
+            }
+            .inner-circle{
+                width:180px;
+                height: 180px;
+                background-color: #222;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 9;
+            }
+
+            @keyframes rotate{
+                0%{
+                    filter: hue-rotate(0deg);
+                }
+                
+                100%{
+                    filter: hue-rotate(360deg);
+                }
+            }
+
+            .outer-circle span{
+                position: absolute;
+                height: 200px;
+                width: 200px;
+                background: linear-gradient(#14ffe9,#ffeb3b,#ff00ff);
+                border-radius: 50%;
+            }
+
+            span:nth-child(1){
+                filter: blur(5px);
+            }
+
+            span:nth-child(2){
+                filter: blur(15px);
+            }
+            span:nth-child(3){
+                filter: blur(25px);
+            }
+
+            span:nth-child(1){
+                filter: blur(150px);
+            }
+
+    </style>
+</head>
+<body>
+    <div class="outer-circle">
+        <div class="inner-circle"></div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</body>
+</html>
